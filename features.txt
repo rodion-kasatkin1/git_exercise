@@ -1,3 +1,5 @@
 mastercard.v1.0 mastercard implemented
 visa.v1.0 visa implemented
 mir.v1.0 mir implemented
+
+GCN  - generator card numbers implemented
