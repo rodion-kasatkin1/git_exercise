@@ -8,19 +8,16 @@ import java.util.List;
 
 public class GeneratorCard {
 
-	public static Card generateCard(String typeCard, int countNumbers) {
-		FirstTypePaymentSystem paymentSystem = FirstTypePaymentSystem.valueOf(typeCard.split("_")[0].toUpperCase());
+	public static List<Integer> generateCardNumber(String prefix, int countNum){
 		List<Integer> cardNumber = new ArrayList<Integer>();
-		Card card = new Card(paymentSystem, cardNumber);
-		String prefix = paymentSystem.getPrefixPaymentSystem();
-
 		for (String num : prefix.split("")) {
 			cardNumber.add(Integer.parseInt(num));
 		}
-		cardNumber.addAll(generateNextDigits(countNumbers - cardNumber.size()));
+		cardNumber.addAll(generateNextDigits(countNum - cardNumber.size()));
 		cardNumber.add(generateLastDigitByLuhna(cardNumber));
-		return card;
+		return cardNumber;
 	}
+
 
 	private static List<Integer> generateNextDigits(int countNumbers) {
 		List<Integer> digits = new ArrayList<Integer>();
