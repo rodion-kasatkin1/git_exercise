@@ -1,0 +1,30 @@
+package paymentSystem;
+
+import paymentSystemTypes.FirstTypePaymentSystem;
+
+import java.util.List;
+
+public abstract class Card {
+	protected List<Integer> cardNumber;
+	protected String typeCard;
+	protected String subTypeCard;
+	public Card() {
+	}
+
+	public Card(List<Integer> cardNumber) {
+
+		this.cardNumber = cardNumber;
+	}
+
+	public List<Integer> getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(List<Integer> cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public abstract String getPrefixPaymentSystem();
+
+
+}
