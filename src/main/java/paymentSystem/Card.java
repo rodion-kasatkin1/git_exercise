@@ -2,12 +2,16 @@ package paymentSystem;
 
 import paymentSystemTypes.FirstTypePaymentSystem;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class Card {
 	protected List<Integer> cardNumber;
 	protected String typeCard;
 	protected String subTypeCard;
+	protected int countNum;
+	protected String prefix;
 	public Card() {
 	}
 
@@ -23,8 +27,6 @@ public abstract class Card {
 	public void setCardNumber(List<Integer> cardNumber) {
 		this.cardNumber = cardNumber;
 	}
-
-	public abstract String getPrefixPaymentSystem();
-
+	
 
 }

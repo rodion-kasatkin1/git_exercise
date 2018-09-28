@@ -5,9 +5,9 @@ import paymentSystem.GeneratorCard;
 public class MasterCardClassic extends MasterCard {
 	private static final String SUB_TYPE_CARD = "classic";
 
-	public MasterCardClassic(int countNum) {
+	public MasterCardClassic() {
 		super();
 		super.subTypeCard = SUB_TYPE_CARD;
-		super.cardNumber = GeneratorCard.generateCardNumber(getPrefixPaymentSystem(), countNum);
+		super.cardNumber = GeneratorCard.generateCardNumber(super.prefix, super.countNum);
 	}
 }
