@@ -8,6 +8,6 @@ public class MasterCardClassic extends MasterCard {
 	public MasterCardClassic() {
 		super();
 		super.subTypeCard = SUB_TYPE_CARD;
-		super.cardNumber = GeneratorCard.generateCardNumber(super.prefix, super.countNum);
+		super.cardNumber = GeneratorCard.generatorCardNumberByTypeCard(super.typeCard, super.subTypeCard);
 	}
 }
