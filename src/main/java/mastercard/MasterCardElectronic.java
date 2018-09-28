@@ -8,6 +8,6 @@ public class MasterCardElectronic extends MasterCard {
 	public MasterCardElectronic(int countNum) {
 		super();
 		super.subTypeCard = SUB_TYPE_CARD;
-		super.cardNumber = GeneratorCard.generateCardNumber(getPrefixPaymentSystem(), countNum);
+		super.cardNumber = GeneratorCard.generatorCardNumberByTypeCard(super.typeCard, super.subTypeCard);
 	}
 }
