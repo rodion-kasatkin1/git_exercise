@@ -1,14 +1,34 @@
 package paymentSystem;
 
 import paymentSystemTypes.FirstTypePaymentSystem;
+import paymentSystemTypes.TypePaymentSystem;
 import utils.RandomNumbersGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GeneratorCard {
+	public static List<Integer> generatorCardNumberByTypeCard(String typeCard, String subtypeCard) {
+		typeCard = typeCard + "_" + subtypeCard;
+		TypePaymentSystem paymentSystem = TypePaymentSystem.valueOf(typeCard.toUpperCase());
+		NomenclatureCard nomenclatureCard;
+		switch (paymentSystem) {
+			case MASTERCARD_CLASSIC: {
+				nomenclatureCard = paymentSystem.getNomenclatureCard();
+				return generateCardNumberByPrefixAndCountNum(nomenclatureCard.getPrefix(), nomenclatureCard.getLengthCard());
+			}
+			default: {
+				System.out.println("This type card is not exist");
+				List<Integer> result = new ArrayList<Integer>();
+				result.add(0);
+				return result;
+			}
 
-	public static List<Integer> generateCardNumber(String prefix, int countNum){
+		}
+	}
+
+
+	public static List<Integer> generateCardNumberByPrefixAndCountNum(String prefix, int countNum) {
 		List<Integer> cardNumber = new ArrayList<Integer>();
 		for (String num : prefix.split("")) {
 			cardNumber.add(Integer.parseInt(num));
