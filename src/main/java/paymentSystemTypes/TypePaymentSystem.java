@@ -15,12 +15,16 @@ public enum TypePaymentSystem {
 		public NomenclatureCard getNomenclatureCard() {
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMasterCardNomenclatures());
 		}
-	}, MASTERCARD_MAESTRO{
-		public NomenclatureCard getNomenclatureCard(){
+	}, MASTERCARD_MAESTRO {
+		public NomenclatureCard getNomenclatureCard() {
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMasterCardMaestroNomenclatures());
 		}
-	},VISA_ELECTRON{
-		public NomenclatureCard getNomenclatureCard(){
+	}, VISA_ELECTRON {
+		public NomenclatureCard getNomenclatureCard() {
+			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclotures());
+		}
+	}, VISA_CLASSIC {
+		public NomenclatureCard getNomenclatureCard() {
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclotures());
 		}
 	};
