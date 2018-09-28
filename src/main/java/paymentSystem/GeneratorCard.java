@@ -17,6 +17,10 @@ public class GeneratorCard {
 				nomenclatureCard = paymentSystem.getNomenclatureCard();
 				return generateCardNumberByPrefixAndCountNum(nomenclatureCard.getPrefix(), nomenclatureCard.getLengthCard());
 			}
+			case MASTERCARD_ELECTRONIC:{
+				nomenclatureCard = paymentSystem.getNomenclatureCard();
+				return generateCardNumberByPrefixAndCountNum(nomenclatureCard.getPrefix(), nomenclatureCard.getLengthCard());
+			}
 			default: {
 				System.out.println("This type card is not exist");
 				List<Integer> result = new ArrayList<Integer>();
