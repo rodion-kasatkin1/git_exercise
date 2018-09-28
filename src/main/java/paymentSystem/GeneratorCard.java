@@ -11,6 +11,7 @@ public class GeneratorCard {
 	public static List<Integer> generatorCardNumberByTypeCard(String typeCard, String subtypeCard) {
 		typeCard = typeCard + "_" + subtypeCard;
 		TypePaymentSystem paymentSystem = TypePaymentSystem.valueOf(typeCard.toUpperCase());
+<<<<<<< HEAD
 		NomenclatureCard nomenclatureCard;
 		switch (paymentSystem) {
 			case MASTERCARD_CLASSIC: {
@@ -25,6 +26,10 @@ public class GeneratorCard {
 			}
 
 		}
+=======
+		NomenclatureCard nomenclatureCard = paymentSystem.getNomenclatureCard();
+		return generateCardNumberByPrefixAndCountNum(nomenclatureCard.getPrefix(), nomenclatureCard.getLengthCard());
+>>>>>>> visa
 	}
 
 

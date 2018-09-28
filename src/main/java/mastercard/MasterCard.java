@@ -20,14 +20,7 @@ public class MasterCard extends Card {
 
 
 	public MasterCard() {
-		List<NomenclatureCard> nomenclatures = GeneratorNomenclaturesTypeCard.getMasterCardNomenclatures();
-		int rnd = RandomNumbersGenerator.rnd.nextInt(nomenclatures.size());
-		NomenclatureCard nc = nomenclatures.get(rnd);
-		super.countNum = nc.getLengthCard();
-		super.prefix = nc.getPrefix();
 		super.typeCard = typeCard;
-
-
 	}
 
 

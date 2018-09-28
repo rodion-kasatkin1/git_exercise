@@ -2,10 +2,10 @@ package mastercard;
 
 import paymentSystem.GeneratorCard;
 
-public class MasterCardClassic extends MasterCard {
-	private static final String SUB_TYPE_CARD = "classic";
+public class MasterCardElectronic extends MasterCard {
+	private static final String SUB_TYPE_CARD = "electronic";
 
-	public MasterCardClassic() {
+	public MasterCardElectronic() {
 		super();
 		super.subTypeCard = SUB_TYPE_CARD;
 		super.cardNumber = GeneratorCard.generatorCardNumberByTypeCard(super.typeCard, super.subTypeCard);

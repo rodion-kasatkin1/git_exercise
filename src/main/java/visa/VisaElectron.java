@@ -1,11 +1,11 @@
-package mastercard;
+package visa;
 
 import paymentSystem.GeneratorCard;
 
-public class MasterCardClassic extends MasterCard {
-	private static final String SUB_TYPE_CARD = "classic";
+public class VisaElectron extends Visa {
+	private static final String SUB_TYPE_CARD = "electron";
 
-	public MasterCardClassic() {
+	public VisaElectron() {
 		super();
 		super.subTypeCard = SUB_TYPE_CARD;
 		super.cardNumber = GeneratorCard.generatorCardNumberByTypeCard(super.typeCard, super.subTypeCard);
