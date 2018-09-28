@@ -27,7 +27,11 @@ public enum TypePaymentSystem {
 		public NomenclatureCard getNomenclatureCard() {
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclotures());
 		}
-	};
+	},VISA_GOLD {
+		public NomenclatureCard getNomenclatureCard() {
+			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclotures());
+		}
+	} ;
 
 	public abstract NomenclatureCard getNomenclatureCard();
 
