@@ -11,24 +11,8 @@ public class GeneratorCard {
 	public static List<Integer> generatorCardNumberByTypeCard(String typeCard, String subtypeCard) {
 		typeCard = typeCard + "_" + subtypeCard;
 		TypePaymentSystem paymentSystem = TypePaymentSystem.valueOf(typeCard.toUpperCase());
-		NomenclatureCard nomenclatureCard;
-		switch (paymentSystem) {
-			case MASTERCARD_CLASSIC: {
-				nomenclatureCard = paymentSystem.getNomenclatureCard();
-				return generateCardNumberByPrefixAndCountNum(nomenclatureCard.getPrefix(), nomenclatureCard.getLengthCard());
-			}
-			case MASTERCARD_ELECTRONIC:{
-				nomenclatureCard = paymentSystem.getNomenclatureCard();
-				return generateCardNumberByPrefixAndCountNum(nomenclatureCard.getPrefix(), nomenclatureCard.getLengthCard());
-			}
-			default: {
-				System.out.println("This type card is not exist");
-				List<Integer> result = new ArrayList<Integer>();
-				result.add(0);
-				return result;
-			}
-
-		}
+		NomenclatureCard nomenclatureCard = paymentSystem.getNomenclatureCard();
+		return generateCardNumberByPrefixAndCountNum(nomenclatureCard.getPrefix(), nomenclatureCard.getLengthCard());
 	}
 
 
