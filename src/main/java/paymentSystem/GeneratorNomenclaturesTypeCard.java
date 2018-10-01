@@ -17,11 +17,14 @@ public class GeneratorNomenclaturesTypeCard {
 	private static final int PREFIX_MAESTRO_SIX = 67;
 
 	private static final int PREFIX_VISA = 4;
-
+	
+	private static final int PREFIX_MIR_LEFT = 2200;
+	private static final int PREFIX_MIR_RIGHT = 2204;
 
 	private static final int LENGTH_MASTER_VISA_MIR_CARD = 16;
 	private static final int LENGTH_MAESTRO_LEFT_BOUND = 12;
 	private static final int LENGTH_MAESTRO_RIGHT_BOUND = 19;
+
 
 	public static List<NomenclatureCard> getMasterCardNomenclatures() {
 		List<NomenclatureCard> nomenclatures = new ArrayList<NomenclatureCard>();
@@ -36,6 +39,7 @@ public class GeneratorNomenclaturesTypeCard {
 
 		return nomenclatures;
 	}
+
 	public static List<NomenclatureCard> getMasterCardMaestroNomenclatures() {
 		List<NomenclatureCard> nomenclatures = new ArrayList<NomenclatureCard>();
 		for (int i = LENGTH_MAESTRO_LEFT_BOUND; i < LENGTH_MAESTRO_RIGHT_BOUND + 1; i++) {
@@ -61,4 +65,12 @@ public class GeneratorNomenclaturesTypeCard {
 		return nomenclatures;
 	}
 
+	public static List<NomenclatureCard> getMirNomenclatures() {
+		List<NomenclatureCard> nomenclatures = new ArrayList<NomenclatureCard>();
+		for (int i = PREFIX_MIR_LEFT; i < PREFIX_MIR_RIGHT; i++) {
+			NomenclatureCard nc = new NomenclatureCard(String.valueOf(i), LENGTH_MASTER_VISA_MIR_CARD);
+			nomenclatures.add(nc);
+		}
+		return nomenclatures;
+	}
 }

@@ -3,6 +3,9 @@ package paymentSystemTypes;
 import mastercard.Maestro;
 import mastercard.MasterCardClassic;
 import mastercard.MasterCardElectronic;
+import mir.MirClassic;
+import mir.MirDebet;
+import mir.MirPremium;
 import paymentSystem.Card;
 import paymentSystem.GeneratorNomenclaturesTypeCard;
 import paymentSystem.NomenclatureCard;
@@ -20,7 +23,6 @@ public enum TypePaymentSystem {
 		}
 
 		public NomenclatureCard getNomenclatureCard() {
-
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMasterCardNomenclatures());
 		}
 	}, MASTERCARD_ELECTRONIC {
@@ -55,6 +57,7 @@ public enum TypePaymentSystem {
 		public NomenclatureCard getNomenclatureCard() {
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclatures());
 		}
+
 	}, VISA_GOLD {
 		public Card getCardClass() {
 			return new VisaGold();
@@ -62,6 +65,31 @@ public enum TypePaymentSystem {
 
 		public NomenclatureCard getNomenclatureCard() {
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclatures());
+		}
+
+	}, MIR_CLASSIC {
+		public Card getCardClass() {
+			return new MirClassic();
+		}
+
+		public NomenclatureCard getNomenclatureCard() {
+			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMirNomenclatures());
+		}
+	}, MIR_DEBET {
+		public Card getCardClass() {
+			return new MirDebet();
+		}
+
+		public NomenclatureCard getNomenclatureCard() {
+			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMirNomenclatures());
+		}
+	}, MIR_PREMIUM {
+		public Card getCardClass() {
+			return new MirPremium();
+		}
+
+		public NomenclatureCard getNomenclatureCard() {
+			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMirNomenclatures());
 		}
 	};
 
@@ -74,4 +102,5 @@ public enum TypePaymentSystem {
 		NomenclatureCard nc = nomenclatures.get(rnd);
 		return nc;
 	}
+
 }
