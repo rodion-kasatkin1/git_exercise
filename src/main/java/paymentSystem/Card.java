@@ -6,8 +6,6 @@ public abstract class Card {
 	protected List<Integer> cardNumber;
 	protected String typeCard;
 	protected String subTypeCard;
-	protected int countNum;
-	protected String prefix;
 	public Card() {
 	}
 
