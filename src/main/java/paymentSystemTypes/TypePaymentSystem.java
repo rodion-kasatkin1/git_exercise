@@ -90,6 +90,7 @@ public enum TypePaymentSystem {
 
 		public NomenclatureCard getNomenclatureCard() {
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMirNomenclatures());
+
 		}
 	};
 
