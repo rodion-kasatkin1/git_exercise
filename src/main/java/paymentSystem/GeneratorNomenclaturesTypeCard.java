@@ -18,6 +18,8 @@ public class GeneratorNomenclaturesTypeCard {
 
 	private static final int PREFIX_VISA = 4;
 
+	public static final int PREFIX_MIR_LEFT = 2200;
+	public static final int PREFIX_MIR_RIGHT = 2204;
 
 	private static final int LENGTH_MASTER_VISA_MIR_CARD = 16;
 	private static final int LENGTH_MAESTRO_LEFT_BOUND = 12;
@@ -60,6 +62,15 @@ public class GeneratorNomenclaturesTypeCard {
 	public static List<NomenclatureCard> getVisaNomenclatures() {
 		List<NomenclatureCard> nomenclatures = new ArrayList<NomenclatureCard>();
 		nomenclatures.add(new NomenclatureCard(String.valueOf(PREFIX_VISA), LENGTH_MASTER_VISA_MIR_CARD));
+		return nomenclatures;
+	}
+
+	public static List<NomenclatureCard> getMirNomenclatures(){
+		List<NomenclatureCard> nomenclatures = new ArrayList<NomenclatureCard>();
+		for (int i = PREFIX_MIR_LEFT; i < PREFIX_MIR_RIGHT; i++) {
+			NomenclatureCard nc = new NomenclatureCard(String.valueOf(i), LENGTH_MASTER_VISA_MIR_CARD);
+			nomenclatures.add(nc);
+		}
 		return nomenclatures;
 	}
 }
