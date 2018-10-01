@@ -17,9 +17,10 @@ public class GeneratorNomenclaturesTypeCard {
 	private static final int PREFIX_MAESTRO_SIX = 67;
 
 	private static final int PREFIX_VISA = 4;
-	
+
 	private static final int PREFIX_MIR_LEFT = 2200;
 	private static final int PREFIX_MIR_RIGHT = 2204;
+
 
 	private static final int LENGTH_MASTER_VISA_MIR_CARD = 16;
 	private static final int LENGTH_MAESTRO_LEFT_BOUND = 12;
@@ -73,4 +74,5 @@ public class GeneratorNomenclaturesTypeCard {
 		}
 		return nomenclatures;
 	}
+
 }
