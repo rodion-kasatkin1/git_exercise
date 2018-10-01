@@ -5,6 +5,7 @@ import mastercard.MasterCardClassic;
 import mastercard.MasterCardElectronic;
 import mir.MirClassic;
 import mir.MirDebet;
+import mir.MirPremium;
 import paymentSystem.Card;
 import paymentSystem.GeneratorNomenclaturesTypeCard;
 import paymentSystem.NomenclatureCard;
@@ -73,9 +74,17 @@ public enum TypePaymentSystem {
 		public NomenclatureCard getNomenclatureCard() {
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMirNomenclatures());
 		}
-	},MIR_DEBET {
+	}, MIR_DEBET {
 		public Card getCardClass() {
 			return new MirDebet();
+		}
+
+		public NomenclatureCard getNomenclatureCard() {
+			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMirNomenclatures());
+		}
+	}, MIR_PREMIUM {
+		public Card getCardClass() {
+			return new MirPremium();
 		}
 
 		public NomenclatureCard getNomenclatureCard() {
