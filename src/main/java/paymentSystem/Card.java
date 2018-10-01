@@ -2,26 +2,22 @@ package paymentSystem;
 
 import paymentSystemTypes.FirstTypePaymentSystem;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-public class Card {
-	FirstTypePaymentSystem firstType;
-	List<Integer> cardNumber;
-
+public abstract class Card {
+	protected List<Integer> cardNumber;
+	protected String typeCard;
+	protected String subTypeCard;
+	protected int countNum;
+	protected String prefix;
 	public Card() {
 	}
 
-	public Card(FirstTypePaymentSystem firstType, List<Integer> cardNumber) {
-		this.firstType = firstType;
+	public Card(List<Integer> cardNumber) {
+
 		this.cardNumber = cardNumber;
-	}
-
-	public FirstTypePaymentSystem getFirstType() {
-		return firstType;
-	}
-
-	public void setFirstType(FirstTypePaymentSystem firstType) {
-		this.firstType = firstType;
 	}
 
 	public List<Integer> getCardNumber() {
@@ -31,6 +27,6 @@ public class Card {
 	public void setCardNumber(List<Integer> cardNumber) {
 		this.cardNumber = cardNumber;
 	}
-
+	
 
 }
