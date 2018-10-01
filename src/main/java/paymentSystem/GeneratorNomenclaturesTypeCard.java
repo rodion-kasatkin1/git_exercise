@@ -16,7 +16,7 @@ public class GeneratorNomenclaturesTypeCard {
 	private static final int PREFIX_MAESTRO_FIVE = 639;
 	private static final int PREFIX_MAESTRO_SIX = 67;
 
-	private static final int PREFIX_VISA = 67;
+	private static final int PREFIX_VISA = 4;
 
 
 	private static final int LENGTH_MASTER_VISA_MIR_CARD = 16;
@@ -57,7 +57,7 @@ public class GeneratorNomenclaturesTypeCard {
 		return nomenclatures;
 	}
 
-	public static List<NomenclatureCard> getVisaNomenclotures() {
+	public static List<NomenclatureCard> getVisaNomenclatures() {
 		List<NomenclatureCard> nomenclatures = new ArrayList<NomenclatureCard>();
 		nomenclatures.add(new NomenclatureCard(String.valueOf(PREFIX_VISA), LENGTH_MASTER_VISA_MIR_CARD));
 		return nomenclatures;

@@ -20,9 +20,8 @@ public class MasterCard extends Card {
 
 
 	public MasterCard() {
-		super.typeCard = typeCard;
-
-
+		super();
+		super.typeCard = TYPE_CARD;
 	}
 
 

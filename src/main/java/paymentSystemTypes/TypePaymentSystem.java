@@ -1,39 +1,72 @@
 package paymentSystemTypes;
 
+import mastercard.Maestro;
+import mastercard.MasterCardClassic;
+import mastercard.MasterCardElectronic;
+import paymentSystem.Card;
 import paymentSystem.GeneratorNomenclaturesTypeCard;
 import paymentSystem.NomenclatureCard;
 import utils.RandomNumbersGenerator;
+import visa.VisaClassic;
+import visa.VisaElectron;
+import visa.VisaGold;
 
 import java.util.List;
 
 public enum TypePaymentSystem {
 	MASTERCARD_CLASSIC {
+		public Card getCardClass() {
+			return new MasterCardClassic();
+		}
+
 		public NomenclatureCard getNomenclatureCard() {
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMasterCardNomenclatures());
 		}
 	}, MASTERCARD_ELECTRONIC {
+		public Card getCardClass() {
+			return new MasterCardElectronic();
+		}
+
 		public NomenclatureCard getNomenclatureCard() {
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMasterCardNomenclatures());
 		}
 	}, MASTERCARD_MAESTRO {
+		public Card getCardClass() {
+			return new Maestro();
+		}
+
 		public NomenclatureCard getNomenclatureCard() {
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMasterCardMaestroNomenclatures());
 		}
 	}, VISA_ELECTRON {
+		public Card getCardClass() {
+			return new VisaElectron();
+		}
+
 		public NomenclatureCard getNomenclatureCard() {
-			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclotures());
+			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclatures());
 		}
 	}, VISA_CLASSIC {
-		public NomenclatureCard getNomenclatureCard() {
-			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclotures());
+		public Card getCardClass() {
+			return new VisaClassic();
 		}
-	},VISA_GOLD {
+
 		public NomenclatureCard getNomenclatureCard() {
-			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclotures());
+			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclatures());
+		}
+
+	}, VISA_GOLD {
+		public Card getCardClass() {
+			return new VisaGold();
+		}
+		public NomenclatureCard getNomenclatureCard() {
+			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclatures());
 		}
 	} ;
 
 	public abstract NomenclatureCard getNomenclatureCard();
+
+	public abstract Card getCardClass();
 
 	private static NomenclatureCard getRandomCardNomenclature(List<NomenclatureCard> nomenclatures) {
 		int rnd = RandomNumbersGenerator.rnd.nextInt(nomenclatures.size());

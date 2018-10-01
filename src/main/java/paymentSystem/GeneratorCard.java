@@ -21,7 +21,7 @@ public class GeneratorCard {
 		for (String num : prefix.split("")) {
 			cardNumber.add(Integer.parseInt(num));
 		}
-		cardNumber.addAll(generateNextDigits(countNum - cardNumber.size()));
+		cardNumber.addAll(generateNextDigits(countNum - cardNumber.size()-1));
 		cardNumber.add(generateLastDigitByLuhna(cardNumber));
 		return cardNumber;
 	}
