@@ -3,6 +3,7 @@ package paymentSystemTypes;
 import mastercard.Maestro;
 import mastercard.MasterCardClassic;
 import mastercard.MasterCardElectronic;
+import mir.MirClassic;
 import paymentSystem.Card;
 import paymentSystem.GeneratorNomenclaturesTypeCard;
 import paymentSystem.NomenclatureCard;
@@ -59,10 +60,19 @@ public enum TypePaymentSystem {
 		public Card getCardClass() {
 			return new VisaGold();
 		}
+
 		public NomenclatureCard getNomenclatureCard() {
 			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclatures());
 		}
-	} ;
+	}, MIR_CLASSIC {
+		public Card getCardClass() {
+			return new MirClassic();
+		}
+
+		public NomenclatureCard getNomenclatureCard() {
+			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMirNomenclatures());
+		}
+	};
 
 	public abstract NomenclatureCard getNomenclatureCard();
 
