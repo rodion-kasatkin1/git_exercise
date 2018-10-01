@@ -1,6 +1,5 @@
 package paymentSystem;
 
-import paymentSystemTypes.FirstTypePaymentSystem;
 import paymentSystemTypes.TypePaymentSystem;
 import utils.RandomNumbersGenerator;
 

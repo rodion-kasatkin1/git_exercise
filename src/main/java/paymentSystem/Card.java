@@ -1,10 +1,6 @@
 package paymentSystem;
 
-import paymentSystemTypes.FirstTypePaymentSystem;
-
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public abstract class Card {
 	protected List<Integer> cardNumber;
