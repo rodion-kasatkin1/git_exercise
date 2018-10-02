@@ -3,3 +3,11 @@ visa.v1.0 visa implemented
 mir.v1.0 mir implemented
 GCN  - generator card numbers implemented
 maestro.v.1.0 maestro implemented
+mastercardClassic.v.1.0 mastercard Classic implemented
+mastercardElectro.v.1.0 mastercard Electronic implemented
+visaClassic.v.1.0 visa classic Classic implemented
+visaElectron.v.1.0 visa Electron Classic implemented
+visaGold.v.1.0 visa gold Classic implemented
+mirClassic.v.1.0 mir Classic implemented
+mirDebet.v.1.0 mir debet implemented 
+mirPremium.v.1.0 mir premium implemented
