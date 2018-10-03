@@ -1,13 +1,13 @@
 package visa;
 
 import paymentSystem.GeneratorCard;
+import paymentSystemTypes.TypePaymentSystem;
 
 public class VisaElectron extends Visa {
-	private static final String SUB_TYPE_CARD = "electron";
 
-	public VisaElectron() {
+	public VisaElectron(int cardNumLength) {
 		super();
-		super.subTypeCard = SUB_TYPE_CARD;
-		super.cardNumber = GeneratorCard.generatorCardNumberByTypeCard(super.typeCard, super.subTypeCard);
+		super.typePaymentSystem = TypePaymentSystem.VISA_ELECTRON;
+		super.cardNumber = GeneratorCard.generatorCardNumberByPrefixAndLength(getPrefixCardNumber(), cardNumLength);
 	}
 }

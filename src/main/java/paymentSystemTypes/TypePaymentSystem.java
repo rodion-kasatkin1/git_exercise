@@ -7,101 +7,56 @@ import mir.MirClassic;
 import mir.MirDebet;
 import mir.MirPremium;
 import paymentSystem.Card;
-import paymentSystem.GeneratorNomenclaturesTypeCard;
-import paymentSystem.NomenclatureCard;
-import utils.RandomNumbersGenerator;
 import visa.VisaClassic;
 import visa.VisaElectron;
 import visa.VisaGold;
 
-import java.util.List;
 
 public enum TypePaymentSystem {
 	MASTERCARD_CLASSIC {
-		public Card getCardClass() {
-			return new MasterCardClassic();
-		}
+		public Card getCardClass(int cardNumLength) {
 
-		public NomenclatureCard getNomenclatureCard() {
-			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMasterCardNomenclatures());
+			return new MasterCardClassic(cardNumLength);
 		}
 	}, MASTERCARD_ELECTRONIC {
-		public Card getCardClass() {
-			return new MasterCardElectronic();
-		}
+		public Card getCardClass(int cardNumLength) {
 
-		public NomenclatureCard getNomenclatureCard() {
-			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMasterCardNomenclatures());
+			return new MasterCardElectronic(cardNumLength);
 		}
 	}, MASTERCARD_MAESTRO {
-		public Card getCardClass() {
-			return new Maestro();
-		}
-
-		public NomenclatureCard getNomenclatureCard() {
-			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMasterCardMaestroNomenclatures());
+		public Card getCardClass(int cardNumLength) {
+			return new Maestro( cardNumLength);
 		}
 	}, VISA_ELECTRON {
-		public Card getCardClass() {
-			return new VisaElectron();
-		}
+		public Card getCardClass(int cardNumLength) {
 
-		public NomenclatureCard getNomenclatureCard() {
-			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclatures());
+			return new VisaElectron(cardNumLength);
 		}
 	}, VISA_CLASSIC {
-		public Card getCardClass() {
-			return new VisaClassic();
+		public Card getCardClass(int cardNumLength) {
+			return new VisaClassic(cardNumLength);
 		}
-
-		public NomenclatureCard getNomenclatureCard() {
-			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclatures());
-		}
-
 	}, VISA_GOLD {
-		public Card getCardClass() {
-			return new VisaGold();
-		}
+		public Card getCardClass(int cardNumLength) {
 
-		public NomenclatureCard getNomenclatureCard() {
-			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getVisaNomenclatures());
+			return new VisaGold(cardNumLength);
 		}
-
 	}, MIR_CLASSIC {
-		public Card getCardClass() {
-			return new MirClassic();
-		}
+		public Card getCardClass(int cardNumLength) {
 
-		public NomenclatureCard getNomenclatureCard() {
-			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMirNomenclatures());
+			return new MirClassic(cardNumLength);
 		}
 	}, MIR_DEBET {
-		public Card getCardClass() {
-			return new MirDebet();
-		}
+		public Card getCardClass(int cardNumLength) {
 
-		public NomenclatureCard getNomenclatureCard() {
-			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMirNomenclatures());
+			return new MirDebet(cardNumLength);
 		}
 	}, MIR_PREMIUM {
-		public Card getCardClass() {
-			return new MirPremium();
-		}
+		public Card getCardClass(int cardNumLength) {
 
-		public NomenclatureCard getNomenclatureCard() {
-			return getRandomCardNomenclature(GeneratorNomenclaturesTypeCard.getMirNomenclatures());
-
+			return new MirPremium(cardNumLength);
 		}
 	};
 
-	public abstract NomenclatureCard getNomenclatureCard();
-
-	public abstract Card getCardClass();
-
-	private static NomenclatureCard getRandomCardNomenclature(List<NomenclatureCard> nomenclatures) {
-		int rnd = RandomNumbersGenerator.rnd.nextInt(nomenclatures.size());
-		NomenclatureCard nc = nomenclatures.get(rnd);
-		return nc;
-	}
-
+	public abstract Card getCardClass(int cardNumLength);
 }

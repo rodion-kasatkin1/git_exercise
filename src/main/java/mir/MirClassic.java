@@ -1,12 +1,13 @@
 package mir;
 
 import paymentSystem.GeneratorCard;
+import paymentSystemTypes.TypePaymentSystem;
 
 public class MirClassic extends Mir{
-	private static final String SUB_TYPE_CARD = "Classic";
-	public MirClassic() {
+
+	public MirClassic(int cardNumLength) {
 		super();
-		super.subTypeCard = SUB_TYPE_CARD;
-		super.cardNumber = GeneratorCard.generatorCardNumberByTypeCard(super.typeCard, super.subTypeCard);
+		super.typePaymentSystem = TypePaymentSystem.MIR_CLASSIC;
+		super.cardNumber = GeneratorCard.generatorCardNumberByPrefixAndLength(getPrefixCardNumber(), cardNumLength);
 	}
 }

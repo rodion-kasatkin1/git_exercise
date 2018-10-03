@@ -1,13 +1,13 @@
 package mastercard;
 
 import paymentSystem.GeneratorCard;
+import paymentSystemTypes.TypePaymentSystem;
 
 public class MasterCardClassic extends MasterCard {
-	private static final String SUB_TYPE_CARD = "classic";
 
-	public MasterCardClassic() {
+	public MasterCardClassic(int cardNumLength) {
 		super();
-		super.subTypeCard = SUB_TYPE_CARD;
-		super.cardNumber = GeneratorCard.generatorCardNumberByTypeCard(super.typeCard, super.subTypeCard);
+		super.typePaymentSystem = TypePaymentSystem.MASTERCARD_CLASSIC;
+		super.cardNumber = GeneratorCard.generatorCardNumberByPrefixAndLength(getPrefixCardNumber(), cardNumLength);
 	}
 }
