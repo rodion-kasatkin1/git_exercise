@@ -7,7 +7,7 @@
     <groupId>EPMFARMJA-6557-Rodion-kasatkin</groupId>
     <artifactId>GitExercise</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
